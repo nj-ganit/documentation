@@ -20,14 +20,14 @@ Create security groups with required inbound access and make sure to keep the pe
 
 #### 3. After creating the EC2 instance SSH to the server with the username ec2-user and run the commands below to install Pritunl and MongoDB.
 
-```sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo << EOF
+`sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo << EOF
 [mongodb-org-6.0]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/
 gpgcheck=1
 enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
-EOF```
+EOF `
 
 ```sudo tee /etc/yum.repos.d/pritunl.repo << EOF
 [pritunl]

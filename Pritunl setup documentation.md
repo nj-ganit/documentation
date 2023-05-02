@@ -11,7 +11,6 @@ To install Pritunl on AWS open the create instance interface and search for the 
 
 Create security groups with required inbound access and make sure to keep the pem file downloaded.
 
-Inline-style: 
 ![alt text](https://i.postimg.cc/vTdwnN9R/img-1.png "AWS EC2 Instance")
 
 

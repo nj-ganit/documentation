@@ -20,56 +20,88 @@ Create security groups with required inbound access and make sure to keep the pe
 
 #### 3. After creating the EC2 instance SSH to the server with the username ec2-user and run the commands below to install Pritunl and MongoDB.
 
-```sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo << EOF
+```
+sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo << EOF
 [mongodb-org-6.0]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/
 gpgcheck=1
 enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
-EOF ```
+EOF
+```
 
-```sudo tee /etc/yum.repos.d/pritunl.repo << EOF
+```
+sudo tee /etc/yum.repos.d/pritunl.repo << EOF
 [pritunl]
 name=Pritunl Repository
 baseurl=https://repo.pritunl.com/stable/yum/oraclelinux/8/
 gpgcheck=1
 gpgkey=https://repo.pritunl.com/stable/yum/oraclelinux/8/RPM-GPG-KEY-Pritunl
 enabled=1
-EOF```
+EOF
+```
 
-```sudo yum -y install oracle-epel-release-el8```
+```
+sudo yum -y install oracle-epel-release-el8
+```
 
-```sudo yum-config-manager --enable ol8_developer_EPEL```
+```
+sudo yum-config-manager --enable ol8_developer_EPEL
+```
 
-```sudo yum -y update```
+```
+sudo yum -y update
+```
 
 WireGuard server support</br>
-```sudo yum -y install wireguard-tool```
+```
+sudo yum -y install wireguard-tool
+```
 
-`sudo yum -y remove iptables-services`
+```
+sudo yum -y remove iptables-services
+```
 
-`sudo systemctl stop firewalld.service`
+```
+sudo systemctl stop firewalld.service
+```
 
-`sudo systemctl disable firewalld.service`
+```
+sudo systemctl disable firewalld.service
+```
 
 Import signing key from keyserver </br>
-`gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A`
+```
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+```
 
-`gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp`
+```
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
+```
 
 Alternative import from download if keyserver offline
-`sudo rpm --import https://raw.githubusercontent.com/pritunl/pgp/master/pritunl_repo_pub.asc`
+```
+sudo rpm --import https://raw.githubusercontent.com/pritunl/pgp/master/pritunl_repo_pub.asc
+```
 
 
 Install updated openvpn package from pritunl</br>
-`sudo yum --allowerasing install pritunl-openvpn`
+```
+sudo yum --allowerasing install pritunl-openvpn
+```
 
-`sudo yum -y install pritunl mongodb-org`
+```
+sudo yum -y install pritunl mongodb-org
+```
 
-`sudo systemctl enable mongod pritunl`
+```
+sudo systemctl enable mongod pritunl
+```
 
-`sudo systemctl start mongod pritunl`
+```
+sudo systemctl start mongod pritunl
+```
 
 #### 4. The Pritunl VPN server is configured via the web interface accessed using the URL `<https://IP_Address>`. But first, obtain the authentication key to the MongoDB database.
 

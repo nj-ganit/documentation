@@ -1,9 +1,11 @@
-# Installing Pritunl in EC2 instance
+# Installing Pritunl VPN in EC2 instance
 
 <p>
-<img src="https://pritunl.com/img/pritunl_onelogin.png" alt="drawing" width="200"/ align="left">
-</p>
+<img src="https://pritunl.com/img/pritunl_onelogin.png" alt="drawing" width="200"/ align="left"></p>
+</br>
 
+#### Pritunl Enterprise VPN Server</br>
+</br>
 
 To install Pritunl on AWS open the create instance interface and search for the Oracle Linux owner ID 131827586825 then select the Community AMIs tab. Select the latest Oracle Linux 8 AMI currently OL8.5-x86_64-HVM-2021-11-24. This will use the free official Oracle Linux 8 image with SELinux support. To find the latest release number check the Oracle Linux ISO Repository The left column will show a number such as 8.5, then find this number with the latest date in the AMI server results.
 
@@ -116,11 +118,11 @@ sudo systemctl start mongod pritunl
 
 #### 6. Run `sudo pritunl default-password` command in the terminal and copy paste the username and password here. Click on save.
 
-[![Untitled-design-5.png](https://i.postimg.cc/CKQ2rKzm/Untitled-design-5.png)](https://postimg.cc/Lqjvn2k1)
+[![Untitled-design-8.png](https://i.postimg.cc/4NR7K7WD/Untitled-design-8.png)](https://postimg.cc/Z0jK2RtH)
 
 #### Once successfully authenticated, make the Pritunl initial settings that include changing the password and the IP address of the Pritunl server.
 
-[![Untitled-design-6.png](https://i.postimg.cc/wjP5SRQy/Untitled-design-6.png)](https://postimg.cc/NK6rXMVB)
+[![Untitled-design-9.png](https://i.postimg.cc/76L1WCFs/Untitled-design-9.png)](https://postimg.cc/ns6QsLcB)
 
 #### Now you will granted with dashboard and you can add users, servers, and organizations.
 

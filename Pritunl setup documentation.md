@@ -11,7 +11,7 @@ To install Pritunl on AWS open the create instance interface and search for the 
 
 Create security groups with required inbound access and make sure to keep the pem file downloaded.
 
-<img src="https://i.postimg.cc/vTdwnN9R/img-1.png" alt="drawing" width="700"/>
+<img src="https://i.postimg.cc/vTdwnN9R/img-1.png" alt="drawing" width="900"/>
 
 
 
@@ -113,11 +113,11 @@ sudo systemctl start mongod pritunl
 
 #### 6. Run `sudo pritunl default-password` command in the terminal and copy paste the username and password here. Click on save.
 
-<img src="https://i.postimg.cc/CKQ2rKzm/Untitled-design-5.png" alt="drawing" width="400"/>
+<img src="https://i.postimg.cc/CKQ2rKzm/Untitled-design-5.png" alt="drawing" width="500"/>
 
 #### Once successfully authenticated, make the Pritunl initial settings that include changing the password and the IP address of the Pritunl server.
 
-<img src="https://i.postimg.cc/wjP5SRQy/Untitled-design-6.png" alt="drawing" width="500"/>
+<img src="https://i.postimg.cc/wjP5SRQy/Untitled-design-6.png" alt="drawing" width="600"/>
 
 #### Now you will granted with dashboard and you can add users, servers, and organizations.
 

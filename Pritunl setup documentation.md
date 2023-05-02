@@ -109,11 +109,11 @@ sudo systemctl start mongod pritunl
 
 #### 5. Run `sudo pritunl setup-key` command in the terminal and copy paste the key here. Click on save.
 
-<img src="https://i.postimg.cc/25hjrghd/Untitled-design-4.png" alt="drawing" width="400"/>
+<img src="https://i.postimg.cc/25hjrghd/Untitled-design-4.png" alt="drawing" width="800"/>
 
 #### 6. Run `sudo pritunl default-password` command in the terminal and copy paste the username and password here. Click on save.
 
-<img src="https://i.postimg.cc/CKQ2rKzm/Untitled-design-5.png" alt="drawing" width="500"/>
+<img src="https://i.postimg.cc/CKQ2rKzm/Untitled-design-5.png" alt="drawing" width="800"/>
 
 #### Once successfully authenticated, make the Pritunl initial settings that include changing the password and the IP address of the Pritunl server.
 

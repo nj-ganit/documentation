@@ -9,7 +9,7 @@
 
 To install Pritunl on AWS open the create instance interface and search for the Oracle Linux owner ID 131827586825 then select the Community AMIs tab. Select the latest Oracle Linux 8 AMI currently [OL8.5-x86_64-HVM-2021-11-24](https://ap-south-1.console.aws.amazon.com/ec2/home?region=ap-south-1#LaunchInstances:). This will use the free official Oracle Linux 8 image with SELinux support. To find the latest release number check the Oracle Linux ISO Repository The left column will show a number such as 8.5, then find this number with the latest date in the AMI server results.
 
-#### 1. Create a Amazon Linux EC2 instance with [OL8.5-x86_64-HVM-2021-11-24 AMI](https://ap-south-1.console.aws.amazon.com/ec2/home?region=ap-south-1#LaunchInstances:)
+#### 1. Create a Amazon Linux EC2 instance with OL8.5-x86_64-HVM-2021-11-24 [AMI](https://ap-south-1.console.aws.amazon.com/ec2/home?region=ap-south-1#LaunchInstances:)
 
 Create security groups with required inbound access and make sure to keep the pem file downloaded.
 

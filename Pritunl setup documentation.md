@@ -7,9 +7,9 @@
 #### Pritunl Enterprise VPN Server</br>
 </br>
 
-To install Pritunl on AWS open the create instance interface and search for the Oracle Linux owner ID 131827586825 then select the Community AMIs tab. Select the latest Oracle Linux 8 AMI currently OL8.5-x86_64-HVM-2021-11-24. This will use the free official Oracle Linux 8 image with SELinux support. To find the latest release number check the Oracle Linux ISO Repository The left column will show a number such as 8.5, then find this number with the latest date in the AMI server results.
+To install Pritunl on AWS open the create instance interface and search for the Oracle Linux owner ID 131827586825 then select the Community AMIs tab. Select the latest Oracle Linux 8 AMI currently [OL8.5-x86_64-HVM-2021-11-24](https://ap-south-1.console.aws.amazon.com/ec2/home?region=ap-south-1#LaunchInstances:). This will use the free official Oracle Linux 8 image with SELinux support. To find the latest release number check the Oracle Linux ISO Repository The left column will show a number such as 8.5, then find this number with the latest date in the AMI server results.
 
-#### 1. Create a EC2 instance with OL8.5-x86_64-HVM-2021-11-24 AMI
+#### 1. Create a EC2 instance with [OL8.5-x86_64-HVM-2021-11-24 AMI](https://ap-south-1.console.aws.amazon.com/ec2/home?region=ap-south-1#LaunchInstances:)
 
 Create security groups with required inbound access and make sure to keep the pem file downloaded.
 
@@ -23,6 +23,8 @@ Create security groups with required inbound access and make sure to keep the pe
 
 #### 3. After creating the EC2 instance SSH to the server with the username ec2-user and run the commands below to install Pritunl and MongoDB.
 
+#### Setting up MongoDB repository
+
 ```
 sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo << EOF
 [mongodb-org-6.0]
@@ -33,6 +35,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
 EOF
 ```
+#### Setting up Pritunl repository
 
 ```
 sudo tee /etc/yum.repos.d/pritunl.repo << EOF
@@ -44,24 +47,22 @@ gpgkey=https://repo.pritunl.com/stable/yum/oraclelinux/8/RPM-GPG-KEY-Pritunl
 enabled=1
 EOF
 ```
+#### Install oracle-epel
 
 ```
 sudo yum -y install oracle-epel-release-el8
 ```
+#### Set up config manager
 
 ```
 sudo yum-config-manager --enable ol8_developer_EPEL
 ```
-
-```
-sudo yum -y update
-```
-
-##### WireGuard server support</br>
+#### WireGuard server support</br>
 
 ```
 sudo yum -y install wireguard-tool
 ```
+#### Disable iptables-service and firewald
 
 ```
 sudo yum -y remove iptables-services
@@ -93,14 +94,17 @@ sudo rpm --import https://raw.githubusercontent.com/pritunl/pgp/master/pritunl_r
 ```
 sudo yum --allowerasing install pritunl-openvpn
 ```
+##### Install Pritunl MongoDB
 
 ```
 sudo yum -y install pritunl mongodb-org
 ```
+##### Enabling MongoDB Pritunl
 
 ```
 sudo systemctl enable mongod pritunl
 ```
+##### Starting MongoDB Pritunl 
 
 ```
 sudo systemctl start mongod pritunl
